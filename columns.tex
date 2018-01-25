@@ -80,7 +80,7 @@
       \item Tabela: nazwy kolumn terminale i \$ $ \Updownarrow $ \\ nazwy wierszy nieterminale $ \Leftrightarrow $
       \item $\forall$ produkcji $A\rightarrow \alpha$  z gramatyki \\ wykonaj 2 i 3
       \item foreach $a \in T$ if $a \in FIRST(\alpha)$ to wpisz $A\rightarrow \alpha$ do $M[A,a]$
-      \item if $\varepsilon \in FIRST(\alpha)$ to dla każdego $b \in FOLLOW(A)$ wpisz $A\rightarrow \alpha$ do $M[A,b]$
+      \item if $\varepsilon \in FIRST(\alpha)$ to dla każdego $b \in FOLLOW(A)$ wpisz $A\rightarrow \alpha$ do $M[A,b]$  Jeżeli $ \varepsilon  \in FIRST(\alpha)$ oraz $ \$ \in FOLLOW(A) $, dodaj $A \rightarrow \alpha $ do $M[A, \$]$ 
       \item \textsc{protip}: nie ma w tabeli $\varepsilon$!
     \end{enumerate}
     \textbf{SLR}
