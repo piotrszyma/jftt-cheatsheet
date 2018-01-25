@@ -38,3 +38,20 @@
   \hline
     $a^{n}c^{k}b^{n} : n \neq k$ & Ogd & $a^{n!+n}c^{n}b^{n!+n}$& \\
 \end{tabular}
+
+
+FIRST
+\begin{enumerate}
+  \item Szukamy produkcji gdzie na początku stoi terminal i ten terminal dodajemy do zbioru FIRST od nieterminala przed strzałką.
+  \item Szukamy produkcji z eps i dodajemy ten eps do zbioru FIRST od nieterminala przed strzałką.
+  \item Szukamy produkcji gdzie na początku stoi nieterminal i FIRST od tego nieterminala dodajemy do FIRST od nieterminala stojącego przed strzałką (bez epsilona). Jeżeli w kopiowanym zbiorze jest epsilon to dodajemy FIRST od następnego symbolu. (Jeśli w każdym symbolu jest epsilon to na końcu dodajemy epsilon).
+\end{enumerate}
+
+FOLLOW
+\begin{enumerate}
+  \item Do zbioru FOLLOW od symbolu początkowego dodajemy \$
+  \item  Szukamy produkcji gdzie za nieterminalem będzie stał jakiś symbol i do FOLLOW od tego nieterminala dodajemy FIRST od następnego symbolu (pomijając eps). Jeśli w dodawanym zbiorze był eps to sprawdzamy kolejny symbol.
+  \item Szukamy produkcji gdzie na końcu znajduje się nieterminal i do FOLLOW od tego nieterminala kopiujemy zawartość FOLLOW od nieterminala przed strzałką. 
+  \item Szukamy produkcji gdzie za jakimś nieterminalem cała prawa strona będzie się zerowała (czyli w FIRST od całej strony będzie epsilon). Wtedy do FOLLOW od tego nieterminala dodajemy FOLLOW od nieterminala przed strzałką. \\
+  Powtarzaj 3 i 4 dopóki są zmiany.
+\end{enumerate}
