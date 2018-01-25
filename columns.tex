@@ -90,7 +90,7 @@
       \item zbiory sytuacji $C = I_0, \dots, I_n $ \\ Zaczynamy od $I_0 = domkniecie([S' \rightarrow \centerdot S])$
       \item tabelka + redukcje (zaznaczyć ew. konflikty) \\
             konstrukcja tabelki: w częsci akcji $s_x$ (shift) i $r_x$ (reduce), a w części przejść (nieterminale) $x$ (liczba) \\
-            ACC dla $S' \rightarrow \centerdot S$
+            ACC dla $S' \rightarrow S  \centerdot $
       \item redukcja do FOLLOW(A) (if redukcja była z $A\rightarrow \beta$)
     \end{enumerate}
     \textbf{LR(1)}
@@ -99,8 +99,8 @@
       \item podgląd początkowy \$
       \item podgląd przy domknięciu: mamy $[A\rightarrow \alpha \bullet B \beta , a] \in I$ 
           dla każdej produkcji z $B\rightarrow \gamma$ dodaj 
-          $[B\rightarrow \centerdot \gamma ,FIRST(Ba)]$
-      \item tabelka + redukcje (zaznaczyć ew. konflikty)
+          $[B\rightarrow \centerdot \gamma ,FIRST(\beta a)]$
+      \item tabelka + redukcje jak SLR ale zamiast redukcja do FOLLOW(A) (if redukcja była z $A\rightarrow \beta$) to redukcja do elementów z \testsc{podglądu}
     \end{enumerate}	
     \textbf{LALR}
     \begin{enumerate}
