@@ -21,22 +21,22 @@
       \item[$\Gamma$] alfabet stosowy
       \item[$q_{0} \in Q$] stan początkowy
       \item[$Z_{0} \in \Gamma$] symbol początkowy na stosie
-      \item[$F \subset Q$] zbiór stanów akcepyujących (jeśli $F=\emptyset$ to akceptujemy przez pusty stos)
+      \item[$F \subset Q$] zbiór stanów akceptujących \\(jeśli $F=\emptyset$ to akceptujemy przez pusty stos)
       \item[$\delta $] funkcja przejścia postaci $\delta: Q \times (\Sigma \cup \lbrace \varepsilon \rbrace)\times \Gamma \rightarrow 2^{Q\times \Gamma ^{*}}$
     \end{enumerate}
-    \textbf{LOP } Zał., że $L$ regularny. Wtedy istnieje stała $n$, że jeśli $z \in L$ oraz $|z| \geqslant n$, to można podzielić z na $z=uvw$ takie, że:
+    \textbf{LOP } Zał., że $L$ regularny. Wtedy istnieje stała $n$, że jeśli $z \in L$ oraz $|z| \geqslant n$, to można podzielić $z$ na $z=uvw$ takie, że:
     \begin{enumerate}
       \item $|v| \geqslant 1$
       \item $|uv| \leqslant n$
       \item $\forall_{i \in \mathbb{N}} z'=uv^{i}w \in L$
     \end{enumerate}
-    \textbf{LOP bezk.} Zał., że $L$ bezkontekstowy.Wtedy istnieje stała $n$, że jeśli $z \in L$ oraz $|z| \geqslant$, to można podzielić z na $z=uvwxy,$ takie, że:
+    \textbf{LOP bezk.} Zał., że $L$ bezkontekstowy.Wtedy istnieje stała $n$, że jeśli $z \in L$ oraz $|z| \geqslant n$, to można podzielić $z$ na $z=uvwxy,$ takie, że:
     \begin{enumerate}
       \item $|vx| \geqslant 1$
       \item $|vwx| \leqslant n$
       \item $\forall_{i \in \mathbb{N}} z'=uv^{i}wx^{i}y \in L$
     \end{enumerate}
-    \textbf{Lemat Ogdena} Niech $L$ język bezkontekstowy. Wtedy istnieje stała $n$ taka, że jeśli $z \in L$ oraz $|z| > n$ i oznaczymy w $z$ $n$ lub więcej pozycji jako wyróżnione, to można podzielić $z$ na $z = uvwxy$ takie, że:
+    \textbf{Lemat Ogdena} Niech $L$ język bezkontekstowy. Wtedy istnieje stała $n$ taka, że jeśli $z \in L$ oraz $|z| >= n$ i oznaczymy w $z$ $n$ lub więcej pozycji jako wyróżnione, to można podzielić $z$ na $z = uvwxy$ takie, że:
     \begin{enumerate}
       \item $v$ i $x$ zawierają łącznie co najmniej jedną wyróżnioną pozycję
       \item $vwx$ zawiera co najwyżej $n$ wyróżnionych pozycji
