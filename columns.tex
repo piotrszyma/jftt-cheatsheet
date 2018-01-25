@@ -77,7 +77,8 @@
     \end{enumerate}
     \textbf{LL(1) - $A \rightarrow \alpha$}
     \begin{enumerate}
-      \item Dla każdej produkcji z gramatyki wykonaj 2 i 3
+      \item Tabela: nazwy kolumn terminale i \$ $ \Updownarrow $ \\ nazwy wierszy nieterminale $ \Leftrightarrow $
+      \item $\forall$ produkcji $A\rightarrow \alpha$  z gramatyki \\ wykonaj 2 i 3
       \item foreach $a \in T$ if $a \in FIRST(\alpha)$ to wpisz $A\rightarrow \alpha$ do $M[A,a]$
       \item if $\varepsilon \in FIRST(\alpha)$ to dla każdego $b \in FOLLOW(A)$ wpisz $A\rightarrow \alpha$ do $M[A,b]$
       \item \textsc{protip}: nie ma w tabeli $\varepsilon$!
