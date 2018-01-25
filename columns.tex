@@ -75,17 +75,19 @@
       \item Jeśli mamy produkcję $A\rightarrow\alpha B \beta$ to do $FOLLOW(B)$ dodajemy wszystkie symbole z $FIRST(\beta)$ poza $\varepsilon$
       \item Jeśli $A\rightarrow\alpha B $ lub $A\rightarrow\alpha B \beta$, gdzie $\varepsilon \in FIRST(\beta)$ to do $FOLLOW(B)$ dodajemy wszystkie symbole z $FOLLOW(A)$
     \end{enumerate}
-    \textbf{LL(1) - $A \rightarrow \alpha$}
+    \textbf{LL(1) - $A \rightarrow \alpha$} \\
+    Tabela: nazwy kolumn terminale i \$ !!!$ \Updownarrow $ \\ nazwy wierszy nieterminale $ \Leftrightarrow $
     \begin{enumerate}
-      \item Tabela: nazwy kolumn terminale i \$ $ \Updownarrow $ \\ nazwy wierszy nieterminale $ \Leftrightarrow $
       \item $\forall$ produkcji $A\rightarrow \alpha$  z gramatyki \\ wykonaj 2 i 3
       \item foreach $a \in T$ if $a \in FIRST(\alpha)$ to wpisz $A\rightarrow \alpha$ do $M[A,a]$
       \item if $\varepsilon \in FIRST(\alpha)$ to dla każdego $b \in FOLLOW(A)$ wpisz $A\rightarrow \alpha$ do $M[A,b]$  Jeżeli $ \varepsilon  \in FIRST(\alpha)$ oraz $ \$ \in FOLLOW(A) $, dodaj $A \rightarrow \alpha $ do $M[A, \$]$ 
       \item \textsc{protip}: nie ma w tabeli $\varepsilon$!
     \end{enumerate}
     \textbf{SLR}
+    Tabela:\\ nazwy kolumn \textsc{akcje} (terminale i \$ !!!) \\i \textsc{przejścia} (nieterminale) \\ nazwy wierszy stany 
+    
     \begin{enumerate}
-      \item zbiory sytuacji
+      \item zbiory sytuacji $C = I_0, \dots, I_n $ \\ Zaczynamy od $I_0 = domkniecie([S' \rightarrow \centerdot S])$
       \item tabelka + redukcje (zaznaczyć ew. konflikty)
       \item redukcja do FOLLOW(A) (if redukcja była z $A\rightarrow \beta$)
     \end{enumerate}
@@ -93,7 +95,7 @@
     \begin{enumerate}
       \item zbiory sytuacji z \textsc{podglądem}
       \item podgląd początkowy \$
-      \item podgląd przy domknięciu: mamy $[A\rightarrow \alpha \centerdot B \beta , a] \in I$ 
+      \item podgląd przy domknięciu: mamy $[A\rightarrow \alpha \bullet B \beta , a] \in I$ 
           dla każdej produkcji z $B\rightarrow \gamma$ dodaj 
           $[B\rightarrow \centerdot \gamma ,FIRST(Ba)]$
       \item tabelka + redukcje (zaznaczyć ew. konflikty)
