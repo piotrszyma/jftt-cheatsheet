@@ -76,7 +76,8 @@
       \item Jeśli $A\rightarrow\alpha B $ lub $A\rightarrow\alpha B \beta$, gdzie $\varepsilon \in FIRST(\beta)$ to do $FOLLOW(B)$ dodajemy wszystkie symbole z $FOLLOW(A)$
     \end{enumerate}
     \textbf{LL(1) - $A \rightarrow \alpha$} \\
-    Tabela: nazwy kolumn terminale i \$ !!!$ \Updownarrow $ \\ nazwy wierszy nieterminale $ \Leftrightarrow $
+    Tabela: nazwy kolumn terminale i \$ !!!$ \Updownarrow $ \\ nazwy wierszy nieterminale $ \Leftrightarrow $ \\
+    Najpierw usuń lewostronną rekursję i zrób faktoryzacje
     \begin{enumerate}
       \item $\forall$ produkcji $A\rightarrow \alpha$  z gramatyki \\ wykonaj 2 i 3
       \item foreach $a \in T$ if $a \in FIRST(\alpha)$ to wpisz $A\rightarrow \alpha$ do $M[A,a]$
