@@ -77,9 +77,10 @@
     \end{enumerate}
     \textbf{LL(1) - $A \rightarrow \alpha$}
     \begin{enumerate}
+      \item Dla każdej produkcji z gramatyki wykonaj 2 i 3
       \item foreach $a \in T$ if $a \in FIRST(\alpha)$ to wpisz $A\rightarrow \alpha$ do $M[A,a]$
       \item if $\varepsilon \in FIRST(\alpha)$ to dla każdego $b \in FOLLOW(A)$ wpisz $A\rightarrow \alpha$ do $M[A,b]$
-      \item nie ma w tabeli $\varepsilon$!
+      \item \textsc{protip}: nie ma w tabeli $\varepsilon$!
     \end{enumerate}
     \textbf{SLR}
     \begin{enumerate}
@@ -116,8 +117,8 @@
     \begin{enumerate}
       \item [$TT$] $T \doteq T$
       \item [$TNT$] $T \doteq T$
-      \item [$TN$] foreach $a \in LEADING(N)$ do $T \lessdot a$ (wiersz)
-      \item [$NT$] foreach $a \in TRAILING(N)$ do $a \gtrdot T$ (kolumna)
+      \item [$TN$] foreach $a \in LEADING(N)$ do $T \lessdot a$ (wiersze) $ \Leftrightarrow $
+      \item [$NT$] foreach $a \in TRAILING(N)$ do $a \gtrdot T$ (kolumny) $ \Updownarrow $
       \item [$\$$] zawsze gorszy
     \end{enumerate}
     \textbf{Zbiory sytuacji}
