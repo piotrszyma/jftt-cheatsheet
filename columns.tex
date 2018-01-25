@@ -30,6 +30,8 @@
       \item $|uv| \leqslant n$
       \item $\forall_{i \in \mathbb{N}} z'=uv^{i}w \in L$
     \end{enumerate}
+    Podział $\alpha = uvw$ , $|uv| \leqslant n$ oraz $|v| \geqslant 1$.
+    Wybieramy $i$ dla którego $|uv^{i}w| \notin L$ a powinien. \\
     \textbf{LOP bezk.} Zał., że $L$ bezkontekstowy.Wtedy istnieje stała $n$, że jeśli $z \in L$ oraz $|z| \geqslant n$, to można podzielić $z$ na $z=uvwxy,$ takie, że:
     \begin{enumerate}
       \item $|vx| \geqslant 1$
@@ -42,8 +44,6 @@
       \item $vwx$ zawiera co najwyżej $n$ wyróżnionych pozycji
       \item $\forall i \in \mathbb{N} \; z' = uv^{i}wx^{i}y \in L$
     \end{enumerate} 
-    Podział $\alpha = uvw$ , $|uv| \leqslant n$ oraz $|v| \geqslant 1$.
-    Wybieramy $i$ dla którego $|uv^{i}w| \notin L$ a powinien. \\
     \textbf{Klasa języków regularnych} jest domknięta na operację sumy, 
     dopełnienia, przecięcia, złożenia i domknięcia Kleene'ego.
     \textbf{Gramatyka bezkontekstowa} G=(N,T,P,S)
@@ -59,7 +59,7 @@
     \begin{enumerate}
       \item If po prawej terminal $a$ to zastępujemy go $C_{a}$ i dopisujemy $C_{a} \rightarrow a$
       \item If prawa strona dłuższa niz 1 to zastępujemy $A \rightarrow B_{1} \ldots B_{n}$ przez \\
-    $A \rightarrow B_{1}D_{1}, D_{1} \rightarrow B_{2}D_{2}, \ldots ,D_{n-2} \rightarrow B_{n-1}B{n}$
+    $A \rightarrow B_{1}D_{1}, D_{1} \rightarrow B_{2}D_{2}, \ldots ,D_{n-2} \rightarrow B_{n-1}B_{n}$
     \end{enumerate}
     \textbf{FIRST(X) - dla symboli}
     \begin{enumerate}
@@ -73,7 +73,7 @@
     \begin{enumerate}
       \item Dla początkowego $S$ do $FOLLOW(S)$ dodajemy \$
       \item Jeśli mamy produkcję $A\rightarrow\alpha B \beta$ to do $FOLLOW(B)$ dodajemy wszystkie symbole z $FIRST(\beta)$ poza $\varepsilon$
-      \item Jeśli $A\rightarrow\alpha B \beta$ lub $A\rightarrow\alpha B $, gdzie $\varepsilon \in FIRST(\beta)$ to do $FOLLOW(B)$ dodajemy wszystkie symbole z $FOLLOW(A)$
+      \item Jeśli $A\rightarrow\alpha B $ lub $A\rightarrow\alpha B \beta$, gdzie $\varepsilon \in FIRST(\beta)$ to do $FOLLOW(B)$ dodajemy wszystkie symbole z $FOLLOW(A)$
     \end{enumerate}
     \textbf{LL(1) - $A \rightarrow \alpha$}
     \begin{enumerate}
