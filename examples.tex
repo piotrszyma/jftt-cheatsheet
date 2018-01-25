@@ -2,6 +2,31 @@
 \begin{tabular}{l|l|l|l}
   język & lem & slowo & notes\\
   \hline
+    $ L = \{ uvv^Rw: u, v, w \in \{0, 1, 2\}^* v \neq \varepsilon \} $ & reg & 
+    dwa te same sym obok \\
+  \hline
+    $ L = \{ wwx: w \in \{0, 1, 2\}^* x \in \{0, 1\}^* |w| > 0 \} $ & Ogd & $21^n \underline{0^n221^n}0^n2$ \\
+  \hline
+    $ L = \{ wxw^R: w \in \{0, 1, 2\}^* x \in \{0, 1\}^* |w| > 0 \} $ & reg & konczy sie tym czym zaczyna \\
+    \hline
+    $ L = \{ a^nb^ka^n, n \neq k \} $ & Ogd & dwa warunki to za mało \\
+    \hline
+    $ L = \{ a^ib^jc^k, i < j < k \} $ & Ogd & nie bezkontekstowy \\
+    \hline
+    $ L = \{ a^ib^jc^k, k = max(i, j) \} $ & lop/ogd & nie bezkontekstowy \\
+    \hline
+    $ L = \{ a^ib^jc^k, i + j =k \} $ & lop & bezkontekstowy \\
+    \hline
+    $ L = \{ a^ib^jc^k, j = i + k \} $ &   & bezkontekstowy \\
+    \hline
+    $ L = \{ a^nb^mc^n, m \neq n \} $ &   & nie jest bezkontekstowy \\
+    \hline
+  $ L = \{ ww, w \in \{ 0, 1 \}^* \} $ &   & Nie bezkontekstowe, ale dopełnienie bezkontekstowe \\
+  \hline
+  $ L = \{ w \in \{ 0, 1, 2 \}^* w = palindrom \; i \; |w|_0 = |w|_2 mod 13\} $ &   & bezkontekstowy, hybryda\\
+  \hline
+  $ L = \{ w \in \{ a, b, c \}^* w = palindrom \; i \; |w|_a = |w|_b i  |w|_c > 0 \} $ & Ogden  & $ a^nb^ncb^na^n $\\
+  \hline
     $\omega = xxy \wedge x \neq \varepsilon $ & LOP & 
     $ab^{n}ab^{n}$ & $i=0$ \\
   \hline 
@@ -39,6 +64,13 @@
     $a^{n}c^{k}b^{n} : n \neq k$ & Ogd & $a^{n!+n}c^{n}b^{n!+n}$& \\
 \end{tabular}
 
+$ L = \{ w \in \{0, 1, 2 \}^* w = palindrom \; i \; |w|_0 = |w|_2 mod 13\} $ - hybryda palindromów (da sie zrobic automat) oraz przejście po stanach \\
+L = $ \{ w \in \{a, b \}^* |w|_a = |w|_b + 5 \} $ < bezkontekstowy \\
+L = $ \{ w \in \{a, b \}^* |w|_a = |w|_b = 2 mod 5 $ < regularny \\
+\\
+
+Majac $ L = \{ w \in \{a, b, c\}^* i |w|_a \neq |w|_b lub |w|_a \neq |w|_c lub |w|_b \neq |w|_c \} $ \\
+mamy niedeterministyczny automat ze stosem ktory zgaduje poprawny wynik. \\
 
 FIRST
 \begin{enumerate}
@@ -55,3 +87,10 @@ FOLLOW
   \item Szukamy produkcji gdzie za jakimś nieterminalem cała prawa strona będzie się zerowała (czyli w FIRST od całej strony będzie epsilon). Wtedy do FOLLOW od tego nieterminala dodajemy FOLLOW od nieterminala przed strzałką. \\
   Powtarzaj 3 i 4 dopóki są zmiany.
 \end{enumerate}
+
+LL
+FIRST(alfa) - FIRST od pierwszego znaku \ {eps}, jeśli jest epsilon to wchodzimy do kolejnego
+\\
+bin(n)bin(n+1), n > 0 - nie jest bezkontekstowe \\
+bin(n)bin(n+1)^R, n > 0 - bezkontekstowe \\
+bin(n)#hex(n)^R, n > 0 > korzystamy z odpowiedniosci bin >> hex i ucieczka od zer na poczatku \\
