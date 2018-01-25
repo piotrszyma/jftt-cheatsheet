@@ -1,6 +1,5 @@
 
   \begin{multicols}{3}
-    [\textbf{\Large WOJCIECH SOKOŁOWSKI NNNNNN}]
     \textbf{DFA}=$(Q,\Sigma , \delta , q_{0},F)$
     \begin{enumerate}
       \item [$Q$]skończony zbiór stanów
@@ -20,7 +19,7 @@
       \item[$Q$] skończony zbiór stanów
       \item[$\Sigma$] alfabet wejściowy
       \item[$\Gamma$] alfabet stosowy
-      \item[$q_{0} \ in Q$] stan początkowy
+      \item[$q_{0} \in Q$] stan początkowy
       \item[$Z_{0} \in \Gamma$] symbol początkowy na stosie
       \item[$F \subset Q$] zbiór stanów akcepyujących (jeśli $F=\emptyset$ to akceptujemy przez pusty stos)
       \item[$\delta $] funkcja przejścia postaci $\delta: Q \times (\Sigma \cup \lbrace \varepsilon \rbrace)\times \Gamma \rightarrow 2^{Q\times \Gamma ^{*}}$
@@ -128,5 +127,17 @@
       \item [$ E \rightarrow \varepsilon $] $E \rightarrow . $
       \item dla kropek, na końcu w tabeli numer z produkcji
     \end{enumerate}
-    \end{multicols}
+    \textbf{Rekurencja}
+    \begin{enumerate}
+      \item $A \rightarrow A \alpha | B$
+      \item $A \rightarrow \beta A'$
+      \item $A' \rightarrow \alpha A' | \varepsilon $
+    \end{enumerate}
+    \textbf{Faktoryzacja}
+    \begin{enumerate}
+      \item $A \rightarrow \alpha \beta _{1}|...|\alpha \beta _{k}$
+      \item $A \rightarrow \alpha A'$
+      \item $A' \rightarrow \beta _{1}|...|\beta _{k}$
+    \end{enumerate}
+\end{multicols}
  
