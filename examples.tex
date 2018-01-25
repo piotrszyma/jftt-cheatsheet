@@ -71,7 +71,38 @@ L = $ \{ w \in \{a, b \}^* |w|_a = |w|_b = 2 mod 5 $ < regularny \\
 
 Majac $ L = \{ w \in \{a, b, c\}^* i |w|_a \neq |w|_b lub |w|_a \neq |w|_c lub |w|_b \neq |w|_c \} $ \\
 mamy niedeterministyczny automat ze stosem ktory zgaduje poprawny wynik. \\
+----------------------------\\
 
+$L_{1} = \{w: w\in\{a,b,c\}^{*} \wedge |w|_{a} \neq |w|_{b} \neq |w|_{c}\}$
+ 
+ Niech n stała z lematu Ogdena. Niech m > n. Wybieramy slowo $z = a^{m + m!}b^{m}c^{m + m!}$ i oznaczamy $m$ liter $b$ jako wyróżnione.
+ \begin{enumerate}
+ 	\item nie możemy pompować samego $a$ ani samego $c$ (brak wyróżnionych).
+ 	\item nie możemy pompować jednocześnie $a$ oraz $c$ (pomiędzy nimi jest więcej niż $n$ wyróżnionych liter).
+ \end{enumerate}
+ 
+ 
+ Pozostają nam do rozpatrzenia podziały, w których:
+ \begin{enumerate}
+ 	\item pompujemy b:\newline
+ 	wyznaczamy i: 
+ 	$|vx|_{b} = p$
+ 	\newline
+ 	$m+m! = m + (i-1)p$
+ 	\newline
+ 	$m! = ip - p$
+ 	\newline
+ 	$i = \frac{m!}{p} + 1$
+ 	\newline
+ 	\newline
+ 	$|z'|_{b}=|z|_{b} + (i-1)|vx|_{b} = m + (\frac{m!}{p} + 1 - 1)p = m + m!$
+ 	\newline
+ 	Długość b jest taka sama jak długość reszty więc wyszliśmy z języka. 
+ 	\item pompowanie a i b. Równamy ilość b do ilości c.
+ 	\newline
+ 	pomowanie b i c. Równamy ilość b do ilości a.
+ \end{enumerate}
+----------------------------\\
 FIRST
 \begin{enumerate}
   \item Szukamy produkcji gdzie na początku stoi terminal i ten terminal dodajemy do zbioru FIRST od nieterminala przed strzałką.
@@ -90,6 +121,7 @@ FOLLOW
 
 LL
 FIRST(alfa) - FIRST od pierwszego znaku \ {eps}, jeśli jest epsilon to wchodzimy do kolejnego
+
 \\
 bin(n)bin(n+1), n > 0 - nie jest bezkontekstowe \\
 bin(n)bin(n+1)^R, n > 0 - bezkontekstowe \\
