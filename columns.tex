@@ -11,7 +11,7 @@
     \textbf{Minimalizacja DFA}
     \begin{enumerate}
       \item forall p końcowy, q niekońcowy, oznacz (p,q)
-      \item forall $(p,q) \in (F\times F) \cup (Q\setminus F \times Q\setminus F ), p \neq q $ if $\exists_{a \in \Sigma} (\delta (p,a), \delta (p,a))$ jest oznaczona, oznacz (p,q) (rekurencyjnie).
+      \item forall $(p,q) \in (F\times F) \cup (Q\setminus F \times Q\setminus F ), p \neq q $ if $\exists_{a \in \Sigma} (\delta (p,a), \delta (q,a))$ jest oznaczona, oznacz (p,q) (rekurencyjnie).
       \item nieoznaczone scalamy.
     \end{enumerate}
     \textbf{PDA} $M=(Q,\Sigma , \Gamma , \delta , q_{0} , Z_{0} , F)$
@@ -40,18 +40,18 @@
     \begin{enumerate}
       \item $v$ i $x$ zawierają łącznie co najmniej jedną wyróżnioną pozycję
       \item $vwx$ zawiera co najwyżej $n$ wyróżnionych pozycji
-      \item $\forall i \in \mathbb{N} z' = uv^{i}wx^{i}y \in L$
+      \item $\forall i \in \mathbb{N} \; z' = uv^{i}wx^{i}y \in L$
     \end{enumerate} 
     Podział $\alpha = uvw$ , $|uv| \leqslant n$ oraz $|v| \geqslant 1$.
-    Wybieramy $i$ dla którego $|uv^{i}w| \notin L$ a powinien.
+    Wybieramy $i$ dla którego $|uv^{i}w| \notin L$ a powinien. \\
     \textbf{Klasa języków regularnych} jest domknięta na operację sumy, 
     dopełnienia, przecięcia, złożenia i domknięcia Kleene'ego.
     \textbf{Gramatyka bezkontekstowa} G=(N,T,P,S)
     \begin{enumerate}
-      \item[N] - skończony zbiór zmiennych(nieterminale)
-      \item[T] - skończony zbiór zmiennych końcowych(termina,alfabet)
+      \item[N] - skończony zbiór zmiennych (nieterminale)
+      \item[T] - skończony zbiór zmiennych końcowych(terminale, alfabet)
       \item[P] - skończony zbiór produkcji postaci A $\rightarrow \alpha$ gdzie A $\in$ N i $\alpha \in$ (N $\cup$ T)$^{*}$
-      \item[S $\in$ N] - \text{symbol początkowy}
+      \item[S] $\in$ N - \text{symbol początkowy}
     \end{enumerate} 
     \textbf{Postać normalna Chomsky'ego} postaci:\\
     $A \rightarrow BC$ albo $A \rightarrow a$\\
@@ -65,7 +65,7 @@
     \begin{enumerate}
       \item X-terminal, to FIRST(X)={X}
       \item X$\rightarrow \varepsilon$ to do FIRST(X) dodajemy $\varepsilon$
-      \item X - nieterminal i $X \rightarrow Y_{1}Y_{2}...Y_{k}$ to dodajemy $a$ do $FIRST(X)$ jeśli istnieje $i$ takie, że $a \in FIRST(Y_{i})$ oraz $\varepsilon \in FIRST(Y_{j})$ dla każdego $j<i$. $\varepsilon \in FIRST(X)$ jeśli należy do wszystkich $FIRST(Y_{i})$. 
+      \item X - nieterminal i $X \rightarrow Y_{1}Y_{2}...Y_{k}$ to dodajemy $a$ do $FIRST(X)$ jeśli istnieje $i$ takie, że $a \in FIRST(Y_{i})$ oraz $\varepsilon \in FIRST(Y_{j})$ dla każdego $j<i$. \\ $\varepsilon \in FIRST(X)$ jeśli należy do wszystkich $FIRST(Y_{i})$. 
       \item $FIRST(X\alpha) = FIRST(X)$ gdy $\varepsilon \notin FIRST(X)$
       \item $FIRST(X\alpha) = FIRST(X) \cup FIRST(\alpha)$ gdy $\varepsilon \in FIRST(X)$
     \end{enumerate}
@@ -90,7 +90,7 @@
     \end{enumerate}
     \textbf{LR(1)}
     \begin{enumerate}
-      \item zbiory sytuacji z PODGLADEM
+      \item zbiory sytuacji z \textsc{podglądem}
       \item podgląd początkowy \$
       \item podgląd przy domknięciu: mamy $[A\rightarrow \alpha \centerdot B \beta , a] \in I$ 
           dla każdej produkcji z $B\rightarrow \gamma$ dodaj 
@@ -99,7 +99,8 @@
     \end{enumerate}	
     \textbf{LALR}
     \begin{enumerate}
-      \item zbiory sytuacji z PODGLADEM (SLR, ale z podglądem z LR(1))
+      \item zbiory sytuacji z \textsc{podglądem} (SLR, ale z podglądem z LR(1))
+      \item sklejamy jądra
     \end{enumerate}	
     \textbf{LEADING(A)-pierwsze term. z A}
     \begin{enumerate}
